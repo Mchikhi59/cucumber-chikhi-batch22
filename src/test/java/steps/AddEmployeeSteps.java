@@ -1,5 +1,7 @@
 package steps;
 
+import Utils.CommonMethods;
+import Utils.Excelreader;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -9,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class AddEmployeeSteps extends baseclass{
+public class AddEmployeeSteps extends CommonMethods {
 
     @When("use clicks on add employee option")
     public void use_clicks_on_add_employee_option() {
@@ -21,8 +23,8 @@ public class AddEmployeeSteps extends baseclass{
     public void user_enter_firstname_and_lastname() {
         WebElement firstname =driver.findElement(By.id("firstName"));
         WebElement lastname =driver.findElement(By.id("lastName"));
-        firstname.sendKeys("miloud");
-        lastname.sendKeys("chikhi");
+        sendText("miloud",firstname);
+        sendText("chikhi",lastname);
     }
     @When("user clicks on save button")
     public void user_clicks_on_save_button() {
