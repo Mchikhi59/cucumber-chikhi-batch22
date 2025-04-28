@@ -16,7 +16,8 @@ public class AddEmployeeSteps extends CommonMethods {
     @When("use clicks on add employee option")
     public void use_clicks_on_add_employee_option() {
         WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
-        addEmpoption.click();
+        //addEmpoption.click();
+        click(addEmpoption);
 
     }
     @When("user enter firstname and lastname")
@@ -43,10 +44,12 @@ public class AddEmployeeSteps extends CommonMethods {
         WebElement firstname =driver.findElement(By.id("firstName"));
         WebElement lastname =driver.findElement(By.id("lastName"));
         WebElement middleName =driver.findElement(By.id("middleName"));
-        firstname.sendKeys("miloud");
-        middleName.sendKeys("mc");
-        lastname.sendKeys("chikhi");
-
+        //firstname.sendKeys("miloud");
+        sendText("miloud",firstname);
+        //middleName.sendKeys("mc");
+        sendText("mc",middleName);
+        //lastname.sendKeys("chikhi");
+        sendText("chikhi",lastname);
 
     }
 
@@ -64,18 +67,24 @@ public class AddEmployeeSteps extends CommonMethods {
         WebElement firstnameLocator =driver.findElement(By.id("firstName"));
         WebElement lastnameLocator =driver.findElement(By.id("lastName"));
         WebElement middleNameLocator =driver.findElement(By.id("middleName"));
-        firstnameLocator.sendKeys(firstname);
-        middleNameLocator.sendKeys(middleName);
-        lastnameLocator.sendKeys(lastname);
+        //firstnameLocator.sendKeys(firstname);
+        sendText("firstname",firstnameLocator);
+       // middleNameLocator.sendKeys(middleName);
+        sendText("middlename",middleNameLocator);
+        //lastnameLocator.sendKeys(lastname);
+        sendText("lastname",lastnameLocator);
     }
     @When("user add {string} , {string} and {string}")
     public void user_add_and(String fn, String mn, String ln) {
         WebElement firstnameLocator =driver.findElement(By.id("firstName"));
         WebElement middleNameLocator =driver.findElement(By.id("middleName"));
         WebElement lastnameLocator =driver.findElement(By.id("lastName"));
-        firstnameLocator.sendKeys(fn);
-        middleNameLocator.sendKeys(mn);
-        lastnameLocator.sendKeys(ln);
+        //firstnameLocator.sendKeys(fn);
+        sendText("fn",firstnameLocator);
+        //middleNameLocator.sendKeys(mn);
+        sendText("mn",middleNameLocator);
+        //lastnameLocator.sendKeys(ln);
+        sendText("ln",lastnameLocator);
     }
 
     @When("user add a multiple employees using data table and save")
@@ -87,15 +96,18 @@ public class AddEmployeeSteps extends CommonMethods {
             WebElement firstnameLocator =driver.findElement(By.id("firstName"));
             WebElement lastnameLocator =driver.findElement(By.id("lastName"));
             WebElement middleNameLocator =driver.findElement(By.id("middleName"));
-            firstnameLocator.sendKeys(employee.get("firstname"));
-            middleNameLocator.sendKeys(employee.get("middlename"));
-            lastnameLocator.sendKeys(employee.get("lastname"));
+            //firstnameLocator.sendKeys(employee.get("firstname"));
+            sendText(employee.get("firstname"),firstnameLocator);
+            //middleNameLocator.sendKeys(employee.get("middlename"));
+            sendText(employee.get("middlename"),middleNameLocator);
+            //lastnameLocator.sendKeys(employee.get("lastname"));
+            sendText(employee.get("lastname"),lastnameLocator);
 
             WebElement savebutton =driver.findElement(By.id("btnSave"));
-            savebutton.click();
+            click(savebutton);
 
             WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
-            addEmpoption.click();
+            click(addEmpoption);
         }
     }
 
@@ -108,15 +120,18 @@ public class AddEmployeeSteps extends CommonMethods {
             WebElement middleNameLocator=driver.findElement(By.id("middleName"));
             WebElement lastNameLocator=driver.findElement(By.id("lastName"));
 
-            firstNameLocator.sendKeys(employee.get("firstName"));
-            middleNameLocator.sendKeys(employee.get("middleName"));
-            lastNameLocator.sendKeys(employee.get("lastName"));
+            //firstNameLocator.sendKeys(employee.get("firstName"));
+            sendText(employee.get("firstName"),firstNameLocator);
+            //middleNameLocator.sendKeys(employee.get("middleName"));
+            sendText(employee.get("middleName"),middleNameLocator);
+            //lastNameLocator.sendKeys(employee.get("lastName"));
+            sendText(employee.get("lastName"),lastNameLocator);
 
             WebElement saveButton =driver.findElement(By.id("btnSave"));
-            saveButton.click();
+            click(saveButton);
 
             WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
-            addEmpoption.click();
+            click(addEmpoption);
 
         }
     }

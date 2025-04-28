@@ -21,11 +21,7 @@ public class loginSteps extends CommonMethods {
     /*public WebDriver driver;*/
     @Given("user is able to access to HRMS application")
     public void user_is_able_to_access_to_hrms_application() {
-         driver = new ChromeDriver();
-        //Global wait implicitwait
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
+        openBrowserAndLaunchApplication();
     }
     @When("usr enters a valid username and password")
     public void usr_enters_a_valid_username_and_password() {
