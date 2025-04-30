@@ -10,7 +10,7 @@ Feature: login related scenarios
     Then user able to see dashboard page
 
     @miloud1
-  Scenario: unvalid admin login
+  Scenario: invalid admin login
 
     When usr enters a invalid username and password
     And user click on valid button

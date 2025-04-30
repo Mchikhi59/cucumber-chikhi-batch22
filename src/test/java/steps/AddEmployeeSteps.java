@@ -6,13 +6,18 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.AddEmployeePage;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import static Utils.PageInitializer.addEmployeePage;
+
 public class AddEmployeeSteps extends CommonMethods {
 
+
+    //AddEmployeePage addEmployeePage=new AddEmployeePage();
     @When("use clicks on add employee option")
     public void use_clicks_on_add_employee_option() {
         WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
@@ -22,15 +27,15 @@ public class AddEmployeeSteps extends CommonMethods {
     }
     @When("user enter firstname and lastname")
     public void user_enter_firstname_and_lastname() {
-        WebElement firstname =driver.findElement(By.id("firstName"));
-        WebElement lastname =driver.findElement(By.id("lastName"));
-        sendText("miloud",firstname);
-        sendText("chikhi",lastname);
+       /* WebElement firstNameLocator =driver.findElement(By.id("firstName"));
+        WebElement lastNameLocator =driver.findElement(By.id("lastName"));*/
+        sendText("miloud",addEmployeePage.firstNameLocator);
+        sendText("chikhi",addEmployeePage.lastNameLocator);
     }
     @When("user clicks on save button")
     public void user_clicks_on_save_button() {
-        WebElement savebutton =driver.findElement(By.id("btnSave"));
-        savebutton.click();
+       // WebElement savebutton =driver.findElement(By.id("btnSave"));
+        click(addEmployeePage.savebutton);
 
 
     }
@@ -41,15 +46,15 @@ public class AddEmployeeSteps extends CommonMethods {
     }
     @When("user enter username middlename and lastname")
     public void user_enter_username_middlename_and_lastname() {
-        WebElement firstname =driver.findElement(By.id("firstName"));
-        WebElement lastname =driver.findElement(By.id("lastName"));
-        WebElement middleName =driver.findElement(By.id("middleName"));
+       /* WebElement firstNameLocator =driver.findElement(By.id("firstName"));
+        WebElement lastNameLocator =driver.findElement(By.id("lastName"));
+        WebElement middleNameLocator =driver.findElement(By.id("middleName"));*/
         //firstname.sendKeys("miloud");
-        sendText("miloud",firstname);
+        sendText("miloud", addEmployeePage.firstNameLocator);
         //middleName.sendKeys("mc");
-        sendText("mc",middleName);
+        sendText("mc",addEmployeePage.middleNameLocator);
         //lastname.sendKeys("chikhi");
-        sendText("chikhi",lastname);
+        sendText("chikhi",addEmployeePage.lastNameLocator);
 
     }
 
@@ -63,28 +68,28 @@ public class AddEmployeeSteps extends CommonMethods {
     }
 
     @When("user enter {string} and {string} and {string} in the application")
-    public void user_enter_and_and_in_the_application(String firstname, String middleName, String lastname) {
-        WebElement firstnameLocator =driver.findElement(By.id("firstName"));
-        WebElement lastnameLocator =driver.findElement(By.id("lastName"));
-        WebElement middleNameLocator =driver.findElement(By.id("middleName"));
+    public void user_enter_and_and_in_the_application(String firstname, String middlename, String lastname) {
+       /* WebElement firstNameLocator =driver.findElement(By.id("firstName"));
+        WebElement lastNameLocator =driver.findElement(By.id("lastName"));
+        WebElement middleNameLocator =driver.findElement(By.id("middleName"));*/
         //firstnameLocator.sendKeys(firstname);
-        sendText("firstname",firstnameLocator);
+        sendText("firstname", addEmployeePage.firstNameLocator);
        // middleNameLocator.sendKeys(middleName);
-        sendText("middlename",middleNameLocator);
+        sendText("middlename",addEmployeePage.middleNameLocator);
         //lastnameLocator.sendKeys(lastname);
-        sendText("lastname",lastnameLocator);
+        sendText("lastname", addEmployeePage.lastNameLocator);
     }
     @When("user add {string} , {string} and {string}")
     public void user_add_and(String fn, String mn, String ln) {
-        WebElement firstnameLocator =driver.findElement(By.id("firstName"));
+       /* WebElement firstNameLocator =driver.findElement(By.id("firstName"));
         WebElement middleNameLocator =driver.findElement(By.id("middleName"));
-        WebElement lastnameLocator =driver.findElement(By.id("lastName"));
+        WebElement lastNameLocator =driver.findElement(By.id("lastName"));*/
         //firstnameLocator.sendKeys(fn);
-        sendText("fn",firstnameLocator);
+        sendText("fn", addEmployeePage.firstNameLocator);
         //middleNameLocator.sendKeys(mn);
-        sendText("mn",middleNameLocator);
+        sendText("mn",addEmployeePage.middleNameLocator);
         //lastnameLocator.sendKeys(ln);
-        sendText("ln",lastnameLocator);
+        sendText("ln",addEmployeePage.lastNameLocator);
     }
 
     @When("user add a multiple employees using data table and save")
@@ -93,18 +98,18 @@ public class AddEmployeeSteps extends CommonMethods {
 
         for (Map<String,String>employee:employeenames){
 
-            WebElement firstnameLocator =driver.findElement(By.id("firstName"));
-            WebElement lastnameLocator =driver.findElement(By.id("lastName"));
-            WebElement middleNameLocator =driver.findElement(By.id("middleName"));
+            /*WebElement firstNameLocator =driver.findElement(By.id("firstName"));
+            WebElement lastNameLocator =driver.findElement(By.id("lastName"));
+            WebElement middleNameLocator =driver.findElement(By.id("middleName"));*/
             //firstnameLocator.sendKeys(employee.get("firstname"));
-            sendText(employee.get("firstname"),firstnameLocator);
+            sendText(employee.get("firstname"), addEmployeePage.firstNameLocator);
             //middleNameLocator.sendKeys(employee.get("middlename"));
-            sendText(employee.get("middlename"),middleNameLocator);
+            sendText(employee.get("middlename"),addEmployeePage.middleNameLocator);
             //lastnameLocator.sendKeys(employee.get("lastname"));
-            sendText(employee.get("lastname"),lastnameLocator);
+            sendText(employee.get("lastname"),addEmployeePage.lastNameLocator);
 
-            WebElement savebutton =driver.findElement(By.id("btnSave"));
-            click(savebutton);
+            //WebElement savebutton =driver.findElement(By.id("btnSave"));
+            click(addEmployeePage.savebutton);
 
             WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
             click(addEmpoption);
@@ -116,19 +121,20 @@ public class AddEmployeeSteps extends CommonMethods {
         List<Map<String,String>> newEmployees = Excelreader.read();
         for (Map<String,String> employee:newEmployees){
 
-            WebElement firstNameLocator=driver.findElement(By.id("firstName"));
+            /*WebElement firstNameLocator=driver.findElement(By.id("firstName"));
             WebElement middleNameLocator=driver.findElement(By.id("middleName"));
-            WebElement lastNameLocator=driver.findElement(By.id("lastName"));
+            WebElement lastNameLocator=driver.findElement(By.id("lastName"));*/
 
             //firstNameLocator.sendKeys(employee.get("firstName"));
-            sendText(employee.get("firstName"),firstNameLocator);
+            sendText(employee.get("firstName"),addEmployeePage.firstNameLocator);
             //middleNameLocator.sendKeys(employee.get("middleName"));
-            sendText(employee.get("middleName"),middleNameLocator);
+            sendText(employee.get("middleName"),addEmployeePage.middleNameLocator);
             //lastNameLocator.sendKeys(employee.get("lastName"));
-            sendText(employee.get("lastName"),lastNameLocator);
+            sendText(employee.get("lastName"),addEmployeePage.lastNameLocator);
 
-            WebElement saveButton =driver.findElement(By.id("btnSave"));
-            click(saveButton);
+            WebElement savebutton =driver.findElement(By.id("btnSave"));
+            click(addEmployeePage.savebutton);
+
 
             WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
             click(addEmpoption);
