@@ -19,7 +19,7 @@ public class AddEmployeeSteps extends CommonMethods {
 
     //AddEmployeePage addEmployeePage=new AddEmployeePage();
 
-    @When("user click on PIM pption")
+   @When("user click on PIM pption")
     public void user_click_on_pim_pption() {
         //WebElement pimoption =driver.findElement(By.id("menu_pim_viewPimModule"));
         //pimoption.click();
@@ -30,7 +30,7 @@ public class AddEmployeeSteps extends CommonMethods {
     public void use_clicks_on_add_employee_option() {
         WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
         //addEmpoption.click();
-        click(addEmpoption);
+        click(addEmployeePage.addEmpoption);
 
     }
     @When("user enter firstname and lastname")

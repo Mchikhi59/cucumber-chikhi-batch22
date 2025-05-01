@@ -8,7 +8,7 @@ Feature: Add employee
     When user click on PIM pption
     And use clicks on add employee option
 
-  @sprint5 @chikhi @smoke
+  @sprint7 @chikhi @smoke
   Scenario: Adding employee by username and lastname
 
     And user enter firstname and lastname
