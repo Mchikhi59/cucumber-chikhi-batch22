@@ -20,6 +20,15 @@ public class AddEmployeePage extends CommonMethods {
     @FindBy(id="btnSave")
     public WebElement savebutton;
 
+    @FindBy(id = "menu_pim_addEmployee")
+    public WebElement addEmpoption;
+
+    @FindBy(id="menu_pim_viewPimModule")
+    public WebElement pimoption;
+
+
+
+
 
     public AddEmployeePage(){
         PageFactory.initElements(driver, this);

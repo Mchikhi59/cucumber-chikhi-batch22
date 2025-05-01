@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 
-public class CommonMethods  {
+public class CommonMethods extends PageInitializer {
 
     public static WebDriver driver;
 
@@ -45,6 +45,7 @@ public class CommonMethods  {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get(ConfigReader.read("url"));
         //this ,method will call all the objects
+        initializePageObjects();
 
     }
 

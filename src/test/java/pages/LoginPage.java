@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import Utils.CommonMethods;
 
-public class loginPage extends CommonMethods {
+public class LoginPage extends CommonMethods {
 
     @FindBy(id="txtUsername")
     public WebElement usernameField;
@@ -16,11 +16,11 @@ public class loginPage extends CommonMethods {
     @FindBy(id ="btnLogin")
     public WebElement loginButton;
 
-    @FindBy(id="menu_pim_viewPimModule")
-    public WebElement pimoption;
 
 
-    public loginPage(){
+
+
+    public LoginPage(){
         //page factory we use to initialize all the web elements and driver we pass as
         // an argument to it. this keyword means, we need to initialize all the elements
         // of this local class

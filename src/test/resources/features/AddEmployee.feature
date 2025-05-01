@@ -8,17 +8,20 @@ Feature: Add employee
     When user click on PIM pption
     And use clicks on add employee option
 
-  @sprint1 @chikhi @smoke
+  @sprint5 @chikhi @smoke
   Scenario: Adding employee by username and lastname
+
     And user enter firstname and lastname
     And user clicks on save button
     Then employee added successfully
-    @sprint2 @smoke @regression @chikhi
-  Scenario:  Adding employee by username middlename and lastname
 
+
+    @sprint2 @smoke @regression1 @chikhi
+  Scenario:  Adding employee by username middlename and lastname
     And user enter username middlename and lastname
     And user clicks on save button
     Then employee added successfully
+
   @params
   Scenario: adding employee using parameters
     And user enter "miloud" and "chikhi" and "mc" in the application

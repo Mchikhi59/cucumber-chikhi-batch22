@@ -1,19 +1,21 @@
 package Utils;
 
 import pages.AddEmployeePage;
-import pages.loginPage;
+import pages.LoginPage;
 
-public class PageInitializer extends CommonMethods {
+public class PageInitializer  {
 
-    public static loginPage loginPage;
+    public static LoginPage loginPage;
 
     public static AddEmployeePage addEmployeePage;
 
 
 
+
     public static void initializePageObjects(){
-        loginPage = new loginPage();
+        loginPage = new LoginPage();
         addEmployeePage  = new AddEmployeePage();
+
 
     }
 
