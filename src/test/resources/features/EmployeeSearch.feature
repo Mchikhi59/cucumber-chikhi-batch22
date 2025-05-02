@@ -8,7 +8,7 @@ Feature: Search employee
     When user click on PIM pption
     And user clicks on employee list option
 
-  @regression @moi
+  @regression @miloud
   Scenario: Search employee by ID
        #Given user is able to access to HRMS application
     #When usr enters a valid username and password
@@ -20,7 +20,7 @@ Feature: Search employee
     Then user is able to see employee details
 
 
-  @regression @bg
+  @regression @chikhi
   Scenario: Search employee by name
       #Given user is able to access to HRMS application
     #When usr enters a valid username and password

@@ -2,14 +2,14 @@ Feature: login related scenarios
 
   Background:
    # Given user is able to access to HRMS application
-  @sprint1 @smoke@ @miloud
+  @sprint @smoke@ @
   Scenario: valid admin login
 
     When usr enters a valid username and password
     And user click on valid button
     Then user able to see dashboard page
 
-    @miloud1
+    @sprint1
   Scenario: invalid admin login
 
     When usr enters a invalid username and password

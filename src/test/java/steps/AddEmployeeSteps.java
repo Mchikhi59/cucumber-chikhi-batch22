@@ -66,14 +66,7 @@ public class AddEmployeeSteps extends CommonMethods {
 
     }
 
-    @When("usr enters a invalid username and password")
-    public void usr_enters_a_invalid_username_and_password() {
-        System.out.println("employee will add later");
-    }
-    @Then("user can see error message")
-    public void user_can_see_error_message() {
-        System.out.println("employee will add later");
-    }
+
 
     @When("user enter {string} and {string} and {string} in the application")
     public void user_enter_and_and_in_the_application(String firstname, String middlename, String lastname) {

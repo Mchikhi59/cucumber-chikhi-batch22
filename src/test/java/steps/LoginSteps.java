@@ -35,6 +35,15 @@ public class LoginSteps extends CommonMethods {
     public void user_able_to_see_dashboard_page() {
         System.out.println("test passed");
     }
+    @When("usr enters a invalid username and password")
+    public void usr_enters_a_invalid_username_and_password() {
+        sendText("admin321", loginPage.usernameField);
+        sendText("ghsnertuldnf", loginPage.passwordField);
+    }
+    @Then("user can see error message")
+    public void user_can_see_error_message() {
+        System.out.println("employee will add later");
+    }
 
 
 

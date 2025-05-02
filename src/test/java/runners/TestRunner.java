@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         //also, it provides missing step definitions
         //to start the execution, set the value of dryRun to false
         dryRun = false,
-        tags = "@bg",
-        plugin = {"pretty"}
+        tags = "@sprint",
+        plugin = {"pretty","html:target/cucumber.html","json:target/cucumber.json"}
 
 
 
