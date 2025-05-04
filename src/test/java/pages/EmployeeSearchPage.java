@@ -16,8 +16,7 @@ public class EmployeeSearchPage extends CommonMethods {
     @FindBy(id="searchBtn")
     public WebElement searchButton;
 
-    @FindBy(xpath = "//*[@id='menu_pim_viewEmployeeList']")
-    public WebElement empListOption;
+
 
     public EmployeeSearchPage(){
         PageFactory.initElements(driver ,this);

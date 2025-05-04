@@ -18,7 +18,7 @@ public class EmployeeSearchSteps extends CommonMethods{
     @When("user clicks on employee list option")
     public void user_clicks_on_employee_list_option() {
         WebElement empListOption = driver.findElement(By.xpath("//*[@id='menu_pim_viewEmployeeList']"));
-        click(empListOption);
+        click(dashboardPage.empListOption);
     }
 
     @When("user enters valid employee id")

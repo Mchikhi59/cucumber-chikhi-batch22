@@ -23,14 +23,14 @@ public class AddEmployeeSteps extends CommonMethods {
     public void user_click_on_pim_pption() {
         //WebElement pimoption =driver.findElement(By.id("menu_pim_viewPimModule"));
         //pimoption.click();
-        click(addEmployeePage.pimoption);
+        click(dashboardPage.pimoption);
     }
 
     @When("use clicks on add employee option")
     public void use_clicks_on_add_employee_option() {
         WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
         //addEmpoption.click();
-        click(addEmployeePage.addEmpoption);
+        click(dashboardPage.addEmpoption);
 
     }
     @When("user enter firstname and lastname")
@@ -113,7 +113,7 @@ public class AddEmployeeSteps extends CommonMethods {
             click(addEmployeePage.savebutton);
 
             WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
-            click(addEmpoption);
+            click(dashboardPage.addEmpoption);
         }
     }
 
@@ -138,7 +138,7 @@ public class AddEmployeeSteps extends CommonMethods {
 
 
             WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
-            click(addEmployeePage.addEmpoption);
+            click(dashboardPage.addEmpoption);
 
         }
     }

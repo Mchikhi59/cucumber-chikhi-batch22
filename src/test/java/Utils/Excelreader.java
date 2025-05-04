@@ -13,7 +13,9 @@ public class Excelreader {
     public static List<Map<String, String>> read(String path, String sheetName) throws IOException {
         List<Map<String, String>> excelData = new ArrayList<>();
 
-        try (FileInputStream fileInputStream = new FileInputStream(path);
+        //.xlsx>>XSSF  ,xls>>>>HSFF
+        try
+                (FileInputStream fileInputStream = new FileInputStream(path);
              XSSFWorkbook excelFile = new XSSFWorkbook(fileInputStream)) {
 
             Sheet sheet1 = excelFile.getSheet(sheetName);

@@ -9,7 +9,7 @@ Feature: login related scenarios
     And user click on valid button
     Then user able to see dashboard page
 
-    @sprint1
+    @inavlid
   Scenario: invalid admin login
 
     When usr enters a invalid username and password

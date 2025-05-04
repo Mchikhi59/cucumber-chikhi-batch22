@@ -5,6 +5,7 @@ import Utils.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -42,7 +43,14 @@ public class LoginSteps extends CommonMethods {
     }
     @Then("user can see error message")
     public void user_can_see_error_message() {
-        System.out.println("employee will add later");
+        //assertions - comparing the values
+        String errorMessage = loginPage.errorMessage.getText();
+        Assert.assertEquals(errorMessage, "Invalid credentials");
+        System.out.println("error is shown");
+
+
+        //assertions - checking the existence of  the field
+        Assert.assertTrue(loginPage.errorMessage.isDisplayed());
     }
 
 
