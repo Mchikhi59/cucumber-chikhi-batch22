@@ -20,6 +20,9 @@ public class AddEmployeePage extends CommonMethods {
     @FindBy(id="btnSave")
     public WebElement savebutton;
 
+    @FindBy(id="employeeId")
+    public WebElement employeeIdField;
+
 
 
 

@@ -22,7 +22,7 @@ Feature: Add employee
     And user clicks on save button
     Then employee added successfully
 
-  @params
+  @params@db
   Scenario: adding employee using parameters
     And user enter "miloud" and "chikhi" and "mc" in the application
     And user clicks on save button

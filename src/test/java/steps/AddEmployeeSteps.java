@@ -1,23 +1,27 @@
 package steps;
 
 import Utils.CommonMethods;
+import Utils.DbUtils;
 import Utils.Excelreader;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import pages.AddEmployeePage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
-
-import static Utils.PageInitializer.addEmployeePage;
 
 public class AddEmployeeSteps extends CommonMethods {
 
 
     //AddEmployeePage addEmployeePage=new AddEmployeePage();
+    String employeeId;
+    String expectedFN;
+    String expectedMN;
+    String expectedLN;
 
    @When("user click on PIM pption")
     public void user_click_on_pim_pption() {
@@ -28,7 +32,7 @@ public class AddEmployeeSteps extends CommonMethods {
 
     @When("use clicks on add employee option")
     public void use_clicks_on_add_employee_option() {
-        WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
+      //  WebElement addEmpoption =driver.findElement(By.id("menu_pim_addEmployee"));
         //addEmpoption.click();
         click(dashboardPage.addEmpoption);
 
@@ -48,8 +52,15 @@ public class AddEmployeeSteps extends CommonMethods {
 
     }
     @Then("employee added successfully")
-    public void employee_added_successfully() {
-        System.out.println("employee will add later");
+    public void employee_added_successfully() throws SQLException {
+        String query = "select emp_firstname, emp_middle_name, emp_lastname from hs_hr_employees where employee_id ="+employeeId;
+        List<Map<String, String>> employeeData = DbUtils.fetchData(query);
+        String actualFN = employeeData.get(0).get("emp_firstname");
+        String actualMN = employeeData.get(0).get("emp_middle_name");
+        String actualLN = employeeData.get(0).get("emp_lastname");
+        Assert.assertEquals(expectedFN, actualFN);
+        Assert.assertEquals(expectedMN, actualMN);
+        Assert.assertEquals(expectedLN, actualLN);
 
     }
     @When("user enter username middlename and lastname")
@@ -74,11 +85,18 @@ public class AddEmployeeSteps extends CommonMethods {
         WebElement lastNameLocator =driver.findElement(By.id("lastName"));
         WebElement middleNameLocator =driver.findElement(By.id("middleName"));*/
         //firstnameLocator.sendKeys(firstname);
-        sendText("firstname", addEmployeePage.firstNameLocator);
+        sendText(firstname, addEmployeePage.firstNameLocator);
+        //middleNameLocator.sendKeys(middlename);
        // middleNameLocator.sendKeys(middleName);
-        sendText("middlename",addEmployeePage.middleNameLocator);
+        sendText(middlename,addEmployeePage.middleNameLocator);
         //lastnameLocator.sendKeys(lastname);
-        sendText("lastname", addEmployeePage.lastNameLocator);
+        sendText(lastname, addEmployeePage.lastNameLocator);
+
+        expectedFN=firstname;
+        expectedMN=middlename;
+        expectedLN=lastname;
+        //get the id of the employee from add employee page
+        employeeId = addEmployeePage.employeeIdField.getAttribute("value");
     }
     @When("user add {string} , {string} and {string}")
     public void user_add_and(String fn, String mn, String ln) {
