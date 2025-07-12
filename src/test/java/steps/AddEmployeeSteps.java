@@ -39,8 +39,9 @@ public class AddEmployeeSteps extends CommonMethods {
     }
     @When("user enter firstname and lastname")
     public void user_enter_firstname_and_lastname() {
-       /* WebElement firstNameLocator =driver.findElement(By.id("firstName"));
+        /*WebElement firstNameLocator =driver.findElement(By.id("firstName"));
         WebElement lastNameLocator =driver.findElement(By.id("lastName"));*/
+
         sendText("miloud",addEmployeePage.firstNameLocator);
         sendText("chikhi",addEmployeePage.lastNameLocator);
     }
@@ -53,6 +54,7 @@ public class AddEmployeeSteps extends CommonMethods {
     }
     @Then("employee added successfully")
     public void employee_added_successfully() throws SQLException {
+
         String query = "select emp_firstname, emp_middle_name, emp_lastname from hs_hr_employees where employee_id ="+employeeId;
         List<Map<String, String>> employeeData = DbUtils.fetchData(query);
         String actualFN = employeeData.get(0).get("emp_firstname");

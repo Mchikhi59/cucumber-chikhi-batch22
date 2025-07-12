@@ -26,7 +26,7 @@ public class CommonMethods extends PageInitializer {
 
             case "Chrome":
                 ChromeOptions options = new ChromeOptions();
-                //options.addArguments("--headless");
+                options.addArguments("--headless");
                 driver=new ChromeDriver(options);
                 break;
             case "FireFox":
@@ -55,9 +55,9 @@ public class CommonMethods extends PageInitializer {
         }
     }
 
-    public void sendText(String text, WebElement element){
+    public void sendText(String Text, WebElement element){
         element.clear();
-        element.sendKeys(text);
+        element.sendKeys(Text);
     }
 
     public void selectFromDropDown(WebElement dropDown, String visibleText){
